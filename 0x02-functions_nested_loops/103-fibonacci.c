@@ -6,7 +6,7 @@
 terms of the Fibonacci sequence, which do not exceed \
 4,000,000, followed by a new line
 *
-* Return: 0
+* Return: 1
 */
 int main(void)
 {
@@ -25,5 +25,5 @@ if (c % 2 == 0)
 sum += c;
 }
 printf("%ld\n", sum);
-return (0);
+return (1);
 }
