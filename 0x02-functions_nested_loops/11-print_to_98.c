@@ -23,6 +23,7 @@ for (; n > 98; n--)
 _putchar('n');
 }
 }
-_putchar("98");
+_putchar('9');
+_putchar('8');
 _putchar('\n');
 }
