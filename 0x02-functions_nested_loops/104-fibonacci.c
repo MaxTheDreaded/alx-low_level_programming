@@ -15,13 +15,13 @@ long int a, b, c;
 a = 1;
 b = 2;
 printf("%ld, %ld, ", a, b);
-for (i = 0; i < 98; i++)
+for (i = 0; i < 97; i++)
 {
 c = a + b;
 a = b;
 b = c;
 printf("%ld", c);
-if (i < 97)
+if (i < 96)
 printf(", ");
 }
 printf("\n");
