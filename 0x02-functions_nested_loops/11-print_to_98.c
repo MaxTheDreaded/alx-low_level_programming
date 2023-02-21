@@ -20,9 +20,9 @@ else
 _putchar('n');
 for (; n > 98; n--)
 {
-printf('n');
+_putchar('n');
 }
 }
-_putchar('98');
+_putchar("98");
 _putchar('\n');
 }
