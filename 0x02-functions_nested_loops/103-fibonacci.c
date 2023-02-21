@@ -10,19 +10,20 @@ terms of the Fibonacci sequence, which do not exceed \
 */
 int main(void)
 {
-int i;
 long int a, b, c, sum;
 
-a = 1;
-b = 2;
+a = 0;
+b = 1;
 sum = 0;
-for (i = 0; i < 32; i++)
+while (c < 4000000)
 {
 c = a + b;
+if (c % 2 == 0)
+{
+sum += c;
+}
 a = b;
 b = c;
-if (c % 2 == 0)
-sum += c;
 }
 printf("%ld\n", sum);
 return (0);
