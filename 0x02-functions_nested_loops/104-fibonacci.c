@@ -9,19 +9,18 @@
 */
 int main(void)
 {
-int i;
 long int a, b, c;
 
 a = 1;
 b = 2;
 printf("%ld, %ld, ", a, b);
-for (i = 0; i < 96; i++)
+while (c < 4000000)
 {
 c = a + b;
 a = b;
 b = c;
 printf("%ld", c);
-if (i < 95)
+if (c < 4000000)
 printf(", ");
 }
 printf("\n");
