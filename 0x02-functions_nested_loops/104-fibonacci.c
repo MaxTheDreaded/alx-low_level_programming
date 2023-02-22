@@ -10,7 +10,7 @@ followed by a new line
 int main(void)
 {
 int i;
-unsigned long int a, b, sum, a1, a2, b1, b2;
+unsigned long int a, b, sum;
 
 a = 1;
 b = 2;
