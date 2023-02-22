@@ -17,7 +17,7 @@ b = 2;
 
 printf("%lu", a);
 
-for (i = 0; i < 97; i++)
+for (i = 0; i < 98; i++)
 {
 printf(", %lu", b);
 sum = a + b;
