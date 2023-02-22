@@ -14,13 +14,13 @@ unsigned long long int a, b, c;
 
 a = 1;
 b = 2;
-printf("%ld, %ld, ", a, b);
+printf("%llu, %llu, ", a, b);
 for (i = 0; i < 96; i++)
 {
 c = a + b;
 a = b;
 b = c;
-printf("%ld", c);
+printf("%llu", c);
 if (i < 95)
 printf(", ");
 }
