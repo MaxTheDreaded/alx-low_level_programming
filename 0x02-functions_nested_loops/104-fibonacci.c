@@ -24,4 +24,5 @@ sum = a + b;
 a = b;
 b = sum;
 }
+return (0);
 }
