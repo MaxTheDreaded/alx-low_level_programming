@@ -10,20 +10,18 @@ followed by a new line
 int main(void)
 {
 int i;
-unsigned long long int a, b, c;
+unsigned long int a, b, sum, a1, a2, b1, b2;
 
 a = 1;
 b = 2;
-printf("%llu, %llu, ", a, b);
-for (i = 0; i < 96; i++)
+
+printf("%lu", a);
+
+for (i = 0; i < 89; i++)
 {
-c = a + b;
+printf(", %lu", b);
+sum = a + b;
 a = b;
-b = c;
-printf("%llu", c);
-if (i < 95)
-printf(", ");
+b = sum;
 }
-printf("\n");
-return (0);
 }
