@@ -3,7 +3,7 @@
 
 /**
  * main - prints the numbers from 1 to 100, followed by a new line
- * 
+ *
  * Return: Always 0.
 */
 int main(void)
