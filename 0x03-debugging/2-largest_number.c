@@ -27,36 +27,36 @@ largest = c;
 
 if (a > b && b < c)
 {
-    if (a > c)
-    {
-        largest = a;
-    }
-    else
-    {
-        largest = c;
-    }
+if (a > c)
+{
+largest = a;
+}
+else
+{
+largest = c;
+}
 }
 else if (b > a && a < c)
 {
-    if (b > c)
-    {
-        largest = b;
-    }
-    else
-    {
-        largest = c;
-    }
+if (b > c)
+{
+largest = b;
+}
+else
+{
+largest = c;
+}
 }
 else if (c > a && a < b)
 {
-    if (c > b)
-    {
-        largest = c;
-    }
-    else
-    {
-        largest = b;
-    }
+if (c > b)
+{
+largest = c;
+}
+else
+{
+largest = b;
+}
 }
 
 return (largest);
