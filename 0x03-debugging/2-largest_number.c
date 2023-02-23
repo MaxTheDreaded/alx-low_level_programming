@@ -59,5 +59,10 @@ largest = b;
 }
 }
 
+if (a == b && b == c)
+{
+largest = a;
+}
+
 return (largest);
 }
