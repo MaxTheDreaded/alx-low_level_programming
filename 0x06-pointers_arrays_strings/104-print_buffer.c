@@ -7,9 +7,8 @@
  */
 void print_buffer(char *b, int size)
 {
-int i, j, k, l;
+int i, j, k, l = 0;
 
-i = j = k = l = 0;
 if (size <= 0)
 printf("\n");
 else
