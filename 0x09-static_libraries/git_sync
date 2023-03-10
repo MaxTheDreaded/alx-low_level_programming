@@ -1,0 +1,6 @@
+#!/bin/bash
+git add --all
+echo "Add your commit message"
+read Msg
+git commit -m "$Msg"
+git push
