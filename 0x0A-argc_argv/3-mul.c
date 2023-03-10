@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- * main - prints the result of the multiplication, followed by a new line.
+ * main - prints the result of the multiplication, 
+ * followed by a new line.
  * @argc: argument count
  * @argv: argument vector
  * Return: 0
