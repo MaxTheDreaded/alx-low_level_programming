@@ -13,3 +13,5 @@
 0x09-static_libraries/liball.a
 0x09-static_libraries/main.c
 0x09-static_libraries/quote.exe
+0x0B-malloc_free/100-main.c
+git_sync
