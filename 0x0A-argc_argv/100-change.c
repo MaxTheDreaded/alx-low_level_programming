@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-int i, j, k, l, m, n, o, p, q, r, s, t;
+int i, j, k, l, m, n, o, p, q, r, t;
 
 if (argc != 2)
 {
@@ -27,7 +27,6 @@ o = m % 5;
 p = o / 2;
 q = o % 2;
 r = q / 1;
-s = q % 1;
 t = j + l + n + p + r;
 printf("%d\n", t);
 return (0);
