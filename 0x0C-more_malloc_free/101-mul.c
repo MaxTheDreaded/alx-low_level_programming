@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdio.h>
+#include "main.h"
 
 /**
  * mul - multiplies two positive integers
@@ -8,9 +9,12 @@
  * @b: second integer in base 10
  * Return: product of a and b
  */
-int mul(unsigned long long a,unsigned long long b)
+int mul(unsigned long a,unsigned long b)
 {
-return (a * b);
+int num;
+
+num = a * b;
+return (num);
 }
 
 /**
@@ -21,35 +25,51 @@ return (a * b);
  */
 int main(int argc, char *argv[])
 {
-int a, b;
+unsigned long a, b;
 
 if (argc != 3)
 {
-printf("Error\n");
-return (1);
+_putchar('E');
+_putchar('r');
+_putchar('r');
+_putchar('o');
+_putchar('r');
+_putchar('\n');
+exit(98);
 }
 
-if (atoi(argv[1]) == 0 || atoi(argv[2]) == 0)
+if (argv[1] == NULL || argv[2] == NULL)
 {
-printf("Error\n");
-return (98);
+_putchar('E');
+_putchar('r');
+_putchar('r');
+_putchar('o');
+_putchar('r');
+_putchar('\n');
+exit(98);
 }
 
 if (atoi(argv[1]) < 0 || atoi(argv[2]) < 0)
 {
-printf("Error\n");
-return (98);
+_putchar('E');
+_putchar('r');
+_putchar('r');
+_putchar('o');
+_putchar('r');
+_putchar('\n');
+exit(98);
 }
 
-if (atoi(argv[1]) < -2147483648 || atoi(argv[2]) < -2147483648)
+if (atoi(argv[1]) == 0 || atoi(argv[2]) == 0)
 {
-printf("Error\n");
-return (98);
+_putchar('0');
+exit(0);
 }
 
-a = atoi(argv[1]);
-b = atoi(argv[2]);
-printf("%d\n", mul(a, b));
+a = strtoull(argv[1], NULL, 10);
+b = strtoull(argv[2], NULL, 10);
+mul(a, b);
+_putchar('0' + mul(a, b));
+_putchar('\n');
 return (0);
 }
-
