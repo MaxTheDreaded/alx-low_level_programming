@@ -2,7 +2,7 @@
 #include "3-calc.h"
 
 /**
- * main_opcodes - prints the opcodes of its own main function
+ * main - prints the opcodes of its own main function
  * @argc: number of arguments
  * @argv: array of arguments
  * Return: 0
