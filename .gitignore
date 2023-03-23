@@ -19,3 +19,5 @@ git_sync
 0x0C-more_malloc_free/_putchar.c
 0x0F-function_pointers/git_sync
 0x0F-function_pointers/calc
+0x10-variadic_functions/3-main.c
+0x10-variadic_functions/git_sync
