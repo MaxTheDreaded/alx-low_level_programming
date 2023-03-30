@@ -1,5 +1,8 @@
+global main
+extern printf
+
 section .text
-_main:
+main:
     push    message
     call    printf
     add     esp, 4
