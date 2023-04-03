@@ -1,8 +1,14 @@
+section .data
+msg: DB 'Hello, Holberton', 10
+msgSize EQU $ - msg
+
+global _main
+extern _printf
+
 section .text
+
 _main:
-    push    message
-    call    printf
-    add     esp, 4
-    ret
-message:
-    db  'Hello, Holberton', 10, 0
+	push	msg
+	call	_printf
+	add	esp, 4
+	ret
