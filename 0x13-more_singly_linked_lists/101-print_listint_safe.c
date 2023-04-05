@@ -13,7 +13,7 @@ const listint_t *first, *second;
 if (!head)
 return (0);
 
-while (second && second < second->next)
+while (second && second->next)
 {
 printf("[%p] %d\n", (void *)first, first->n);
 i++;
