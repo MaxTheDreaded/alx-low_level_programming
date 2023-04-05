@@ -22,7 +22,7 @@ if (index == 0)
 free(tmp);
 return (1);
 }
-while (tmp != NULL)
+while (tmp)
 {
 if (i == index)
 {
