@@ -8,6 +8,7 @@ Here is a table of the functions used in this project and their corresponding fi
 
 | Function | File | Description |
 | :--- | :--- | :--- |
+| `binary_to_uint` | [0-binary\_to\_uint.c](./0-binary_to_uint.c) | Converts a binary number to an `unsigned int`. |
 | `get_bit` | [0-get\_bit.c](./0-get_bit.c) | Returns the value of a bit at a given index. |
 | `set_bit` | [1-set\_bit.c](./1-set_bit.c) | Sets the value of a bit to `1` at a given index. |
 | `clear_bit` | [2-clear\_bit.c](./2-clear_bit.c) | Sets the value of a bit to `0` at a given index. |
