@@ -22,7 +22,7 @@ return (-1);
 while ((r = read(fd_from, buf, 1024)) > 0)
 {
 w = write(fd_to, buf, r);
-if (w == -1)
+if (!w)
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
 }
 
