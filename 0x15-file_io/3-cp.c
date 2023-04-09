@@ -45,9 +45,13 @@ int main(int argc, char *argv[])
 {
 if (argc != 3)
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
-
-if (copier(argv[1], argv[2]) == -1)
+else if (copier(argv[1], argv[2]) == -1)
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
+else if (copier(argv[1], argv[2]) == -1)
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+else if (copier(argv[1], argv[2]) == -1)
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", copier(argv[1], argv[2])),
+exit(100);
 
 return (0);
 }
