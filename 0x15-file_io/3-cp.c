@@ -15,7 +15,7 @@ fd_from = open(file_from, O_RDONLY);
 if (fd_from == -1)
 return (-1);
 
-fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 664);
 if (fd_to == -1)
 return (-1);
 
