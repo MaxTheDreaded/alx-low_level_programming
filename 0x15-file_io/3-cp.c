@@ -15,7 +15,7 @@ fd_from = open(file_from, O_RDONLY);
 if (fd_from == -1)
 return (-1);
 
-fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 664);
+fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0666);
 if (fd_to == -1)
 return (-1);
 
@@ -25,6 +25,8 @@ w = write(fd_to, buf, r);
 if (w == -1)
 return (-1);
 }
+
+chmod(file_to, 0664);
 
 if (r == -1)
 return (-1);
