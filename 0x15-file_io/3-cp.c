@@ -49,7 +49,6 @@ if (r == -1)
 {
 close(fd_from);
 close(fd_to);
-error_msg(98, (char *)file_from);
 }
 while (r > 0)
 {
@@ -58,14 +57,12 @@ if (w == -1)
 {
 close(fd_from);
 close(fd_to);
-error_msg(99, (char *)file_to);
 }
 r = read(fd_from, buf, 1024);
 if (r == -1)
 {
 close(fd_from);
 close(fd_to);
-error_msg(98, (char *)file_from);
 }
 }
 if (close(fd_from) == -1)
