@@ -26,8 +26,6 @@ if (w == -1)
 return (-1);
 }
 
-chmod(file_to, 0664);
-
 if (r == -1)
 return (-1);
 
