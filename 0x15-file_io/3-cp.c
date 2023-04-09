@@ -15,15 +15,23 @@ fd_from = open(file_from, O_RDONLY);
 if (fd_from == -1)
 return (-1);
 
+if (access(file_to, F_OK) == 0)
+{
 fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 if (fd_to == -1)
 return (-1);
+}
+else
+{
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+exit(99);
+}
 
 while ((r = read(fd_from, buf, 1024)) > 0)
 {
 w = write(fd_to, buf, r);
-if (!w)
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
+if (w == -1)
+return (-1);
 }
 
 if (r == -1)
