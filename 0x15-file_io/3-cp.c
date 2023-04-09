@@ -57,7 +57,8 @@ if (argc != 3)
 {
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 }
-else if (copier(argv[1], argv[2]) == -1)
+
+if (copier(argv[1], argv[2]) == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 }
