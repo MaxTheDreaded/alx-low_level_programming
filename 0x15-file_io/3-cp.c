@@ -49,12 +49,5 @@ dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 if (copier(argv[1], argv[2]) == -1)
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 
-if (copier(argv[2], argv[1]) == -1)
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
-
-if (copier(argv[1], argv[2]) == -1)
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", copier(argv[1], argv[2])),
-	exit(100);
-
 return (0);
 }
