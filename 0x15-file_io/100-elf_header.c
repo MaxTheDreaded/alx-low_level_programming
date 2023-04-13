@@ -107,7 +107,7 @@ return (e_ident[6]);
 /**
  * elf_osabi - checks if file is UNIX System V ABI
  * @file: file to check
- * Return: 1 if file is UNIX System V ABI, 0 otherwise
+ * Return: 1 if file is UNIX System V ABI, 0 if otherwise
  */
 int elf_osabi(const char *file)
 {
