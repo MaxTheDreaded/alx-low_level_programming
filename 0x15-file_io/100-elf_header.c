@@ -10,27 +10,23 @@ void print_error(char *msg, ...)
 va_list ap;
 
 va_start(ap, msg);
-dprintf(STDERR_FILENO, msg, ap);
+printf("%s", msg);
 va_end(ap);
 exit(98);
 }
 
 /**
- * check_file_args - checks if file args are valid
+ * check_file_args - checks that the correct number of arguments are passed
  * @argc: number of arguments
  * @argv: array of arguments
  * Return: void
  */
 void check_file_args(int argc, char *argv[])
 {
-if (argc != 3)
-print_error("Usage: cp file_from file_to\n");
-
+if (argc != 2)
+print_error("Usage: elf_header elf_filename\n");
 if (argv[1] == NULL)
 print_error("Error: Can't read from file %s\n", argv[1]);
-
-if (argv[2] == NULL)
-print_error("Error: Can't write to %s\n", argv[2]);
 }
 
 /**
@@ -248,6 +244,20 @@ printf("  Entry point address:               0x%lx\n", header->e_entry);
 }
 
 /**
+ * check_elf - checks if file is an ELF file
+ * @header: pointer to the ELF header struct
+ * Return: void
+ */
+void check_elf(Elf64_Ehdr *header)
+{
+if (header->e_ident[EI_MAG0] != ELFMAG0 ||
+header->e_ident[EI_MAG1] != ELFMAG1 ||
+header->e_ident[EI_MAG2] != ELFMAG2 ||
+header->e_ident[EI_MAG3] != ELFMAG3)
+print_error("Error: Not an ELF file - it has the wrong magic bytes at the start\n");
+}
+
+/**
  * main - displays the information contained in the ELF header at the start of
  * an ELF file
  * @argc: number of arguments
@@ -259,10 +269,13 @@ int main(int argc, char *argv[])
 int fd;
 Elf64_Ehdr *header;
 
+
 check_file_args(argc, argv);
 
 fd = open_ELF(argv[1]);
 header = read_ELF_header(fd);
+
+check_elf(header);
 
 printf("ELF Header:\n");
 print_magic(header);
