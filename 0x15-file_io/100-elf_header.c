@@ -195,12 +195,12 @@ printf("<unknown: %x>\n", header->e_ident[EI_OSABI]);
 
 /**
  * print_abi_version - prints the ABI version of the ELF file
- * @header: pointer to the ELF header struct
+ * @h: pointer to the ELF header struct
  * Return: void
  */
-void print_abi_version(Elf64_Ehdr *header)
+void print_abi_version(Elf64_Ehdr *h)
 {
-printf("  ABI Version:                       %d\n", header->e_ident[EI_ABIVERSION]);
+printf("  ABI Version:                       %d\n", h->e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -254,7 +254,7 @@ if (header->e_ident[EI_MAG0] != ELFMAG0 ||
 header->e_ident[EI_MAG1] != ELFMAG1 ||
 header->e_ident[EI_MAG2] != ELFMAG2 ||
 header->e_ident[EI_MAG3] != ELFMAG3)
-print_error("Error: Not an ELF file - it has the wrong magic bytes at the start\n");
+print_error("Error: Not an ELF file\n");
 }
 
 /**
