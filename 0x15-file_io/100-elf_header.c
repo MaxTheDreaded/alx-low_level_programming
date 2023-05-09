@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * print_error - prints error message and exits
+ * print_error - prints error message to stderr and exits
  * @msg: error message
  * Return: void
  */
 void print_error(char *msg, ...)
 {
-va_list ap;
+va_list args;
 
-va_start(ap, msg);
-printf("%s", msg);
-va_end(ap);
+va_start(args, msg);
+vdprintf(STDERR_FILENO, msg, args);
+va_end(args);
 exit(98);
 }
 
@@ -245,6 +245,7 @@ printf("  Entry point address:               0x%lx\n", header->e_entry);
 
 /**
  * check_elf - checks if file is an ELF file
+ * and displays message to stderr
  * @header: pointer to the ELF header struct
  * Return: void
  */
