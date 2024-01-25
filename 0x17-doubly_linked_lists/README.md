@@ -38,3 +38,8 @@ This folder contains tasks for the [ALX Low Level Programming: 0x17 - Doubly Lin
   - [6-sum_dlistint.c](
         https://github.com/alx-low-level-programming/0x17-doubly_linked_lists/blob/main/6-sum_dlistint.c
     )
+
+- Inserts a new node at a given position
+  - [7-insert_dnodeint.c](
+        https://github.com/alx-low-level-programming/0x17-doubly_linked_lists/blob/main/7-insert_dnodeint.c
+    )
