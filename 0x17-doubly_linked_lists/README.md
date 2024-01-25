@@ -33,3 +33,8 @@ This folder contains tasks for the [ALX Low Level Programming: 0x17 - Doubly Lin
   - [5-get_dnodeint.c](
         https://github.com/alx-low-level-programming/0x17-doubly_linked_lists/blob/main/5-get_dnodeint.c
     )
+
+- Return the sum of the data (n) of a doubly linked list
+  - [6-sum_dlistint.c](
+        https://github.com/alx-low-level-programming/0x17-doubly_linked_lists/blob/main/6-sum_dlistint.c
+    )
