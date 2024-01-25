@@ -43,3 +43,8 @@ This folder contains tasks for the [ALX Low Level Programming: 0x17 - Doubly Lin
   - [7-insert_dnodeint.c](
         https://github.com/alx-low-level-programming/0x17-doubly_linked_lists/blob/main/7-insert_dnodeint.c
     )
+
+- Delete the node at a given position of a doubly linked list
+  - [8-delete_dnodeint.c](
+        https://github.com/alx-low-level-programming/0x17-doubly_linked_lists/blob/main/8-delete_dnodeint.c
+    )
