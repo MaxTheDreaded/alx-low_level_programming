@@ -26,3 +26,4 @@ git_sync
 0x13-more_singly_linked_lists/a
 0x15-file_io/*main.c
 0x15-file_io/Requiescat
+0x18-dynamic_libraries/liball.so
