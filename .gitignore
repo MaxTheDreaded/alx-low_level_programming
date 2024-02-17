@@ -27,3 +27,5 @@ git_sync
 0x15-file_io/*main.c
 0x15-file_io/Requiescat
 0x18-dynamic_libraries/liball.so
+0x1A-hash_tables/5-main.c
+0x1A-hash_tables/f
