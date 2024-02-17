@@ -27,58 +27,94 @@ return (ht);
 
 /**
  * shash_table_set - Adds an element to the sorted hash table
- * @ht: The sorted hash table
+ * @table: The sorted hash table
  * @key: The key
  * @value: The value associated with the key
  * Return: 1 if it succeeded, 0 otherwise
  */
-int shash_table_set(shash_table_t *ht, const char *key, const char *value)
+int shash_table_set(shash_table_t *table, const char *key, const char *value)
 {
-shash_node_t *new_node, *temp;
-unsigned long int index;
+	if (table == NULL || key == NULL || *key == '\0' || value == NULL)
+		return (0);
 
-if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
-return (0);
+	unsigned long int index = key_index((const unsigned char *)key, table->size);
+	shash_node_t *new_node = create_new_node(key, value);
 
-index = key_index((const unsigned char *)key, ht->size);
-temp = ht->array[index];
+	if (new_node == NULL)
+		return (0);
 
-new_node = malloc(sizeof(shash_node_t));
-if (new_node == NULL)
-return (0);
-
-new_node->key = strdup(key);
-if (new_node->key == NULL)
-{
-free(new_node);
-return (0);
+	insert_node_at_i(table, new_node, index);
+	update_sorted_list(table, new_node);
+	return (1);
 }
 
-new_node->value = strdup(value);
-if (new_node->value == NULL)
+/**
+ * create_new_node - Creates a new node
+ * @key: The key
+ * @value: The value
+ * Return: The new node
+ */
+shash_node_t *create_new_node(const char *key, const char *value)
 {
-free(new_node->key);
-free(new_node);
-return (0);
+	shash_node_t *new_node = malloc(sizeof(shash_node_t));
+
+	if (new_node == NULL)
+		return (NULL);
+
+	new_node->key = strdup(key);
+	if (new_node->key == NULL)
+	{
+		free(new_node);
+		return (NULL);
+	}
+
+	new_node->value = strdup(value);
+	if (new_node->value == NULL)
+	{
+		free(new_node->key);
+		free(new_node);
+		return (NULL);
+	}
+
+	new_node->next = NULL;
+	new_node->sprev = NULL;
+	new_node->snext = NULL;
+	return (new_node);
 }
 
-new_node->next = ht->array[index];
-if (ht->array[index] != NULL)
-ht->array[index]->sprev = new_node;
+/**
+ * insert_node_at_i - Inserts a new node at a given index
+ * @t: The sorted hash table
+ * @n: The new node
+ * @i: The index
+ */
+void insert_node_at_i(shash_table_t *t, shash_node_t *n, unsigned long int i)
+{
+	n->next = t->array[i];
+	if (t->array[i] != NULL)
+		t->array[i]->sprev = n;
 
-ht->array[index] = new_node;
-if (ht->shead == NULL)
-{
-ht->shead = new_node;
-ht->stail = new_node;
+	t->array[i] = n;
 }
-else
+
+/**
+ * update_sorted_list - Updates the sorted list
+ * @table: The sorted hash table
+ * @new_node: The new node
+ */
+void update_sorted_list(shash_table_t *table, shash_node_t *new_node)
 {
-ht->stail->snext = new_node;
-new_node->sprev = ht->stail;
-ht->stail = new_node;
-}
-return (1);
+	if (table->shead == NULL)
+	{
+		table->shead = new_node;
+		table->stail = new_node;
+	}
+	else
+	{
+		table->stail->snext = new_node;
+		new_node->sprev = table->stail;
+		table->stail = new_node;
+	}
 }
 
 /**
