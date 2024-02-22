@@ -87,4 +87,8 @@ void shash_table_print(const shash_table_t *ht);
 void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 
+shash_node_t *create_new_node(const char *key, const char *value);
+void insert_node_at_i(shash_table_t *t, shash_node_t *n, unsigned long int i);
+void update_sorted_list(shash_table_t *table, shash_node_t *new_node);
+
 #endif

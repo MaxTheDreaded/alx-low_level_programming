@@ -34,11 +34,14 @@ return (ht);
  */
 int shash_table_set(shash_table_t *table, const char *key, const char *value)
 {
+	unsigned long int index;
+	shash_node_t *new_node;
+
 	if (table == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
-	unsigned long int index = key_index((const unsigned char *)key, table->size);
-	shash_node_t *new_node = create_new_node(key, value);
+	index = key_index((const unsigned char *)key, table->size);
+	new_node = create_new_node(key, value);
 
 	if (new_node == NULL)
 		return (0);
@@ -206,7 +209,7 @@ printf("}\n");
  */
 void shash_table_delete(shash_table_t *ht)
 {
-shash_node_t *temp, *next;
+shash_node_t *temp;
 
 if (ht == NULL)
 return;
